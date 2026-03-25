@@ -46,10 +46,19 @@ nav {
   color: var(--teal);
 }
 
+.nav-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 2px;
+}
+
 .nav-disclaimer {
-  font-size: 0.72rem;
+  font-size: 0.68rem;
   color: var(--muted);
   font-style: italic;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-weight: normal;
 }
 
 /* ── HERO ── */
@@ -187,6 +196,102 @@ nav {
 .card p {
   font-size: 0.95rem;
   color: var(--muted);
+}
+
+/* ── MERCH ── */
+.merch {
+  padding: 5rem 2rem;
+  background: var(--cream);
+  border-top: 1px solid var(--border);
+}
+
+.merch-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.merch h2 {
+  font-family: 'Comic Sans MS', 'Comic Sans', cursive;
+  font-size: 2rem;
+  color: #1a7a3f;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.merch-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.merch-item {
+  text-align: center;
+}
+
+.tshirt {
+  background: #1a1a1a;
+  border-radius: 12px;
+  width: 200px;
+  height: 200px;
+  margin: 0 auto 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tshirt-graphic {
+  font-weight: 900;
+  letter-spacing: 2px;
+  line-height: 1;
+  text-align: center;
+}
+
+.rundmc {
+  font-size: 2.8rem;
+  color: white;
+  font-family: Arial Black, sans-serif;
+  border: 4px solid white;
+  padding: 0.4rem 0.8rem;
+  text-transform: uppercase;
+}
+
+.pivot {
+  font-size: 1.4rem;
+  color: #ff4444;
+  font-family: Arial Black, sans-serif;
+  text-transform: uppercase;
+}
+
+.equity {
+  font-size: 1.2rem;
+  color: #ffd700;
+  font-family: Arial Black, sans-serif;
+  text-transform: uppercase;
+}
+
+.merch-name {
+  font-family: 'Comic Sans MS', 'Comic Sans', cursive;
+  font-size: 1rem;
+  color: #1a7a3f;
+  margin-bottom: 0.4rem;
+}
+
+.merch-desc {
+  font-size: 0.88rem;
+  color: var(--muted);
+  max-width: 240px;
+  margin: 0 auto 0.75rem;
+}
+
+.merch-badge {
+  display: inline-block;
+  background: var(--border);
+  color: var(--muted);
+  font-size: 0.75rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-style: italic;
 }
 
 /* ── WAITLIST ── */
