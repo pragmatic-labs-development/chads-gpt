@@ -49,32 +49,27 @@ export default function Home() {
       {/* NAV */}
       <Nav />
 
-      {/* HERO */}
-      <section className="hero">
-        <div className="hero-content">
-          <div className="hero-inner">
-            <div className="hero-tag">New Drop 🔥</div>
-            <h1>
-              Wear Your AI Opinions
-              <span className="hero-accent">Loudly.</span>
-            </h1>
-            <p className="subhead">
-              Funny shirts for people who&apos;ve argued with a chatbot and lost.
-              Also for people who won. You know who you are.
-            </p>
-            <a className="cta-btn cta-large cta-btn-inverted" href="#shop">
-              Shop the Collection
-            </a>
+      {/* RED TICKER — commented out
+      <div className="ticker-wrap" aria-hidden="true">
+        <div className="ticker-track">
+          {[...TICKER_ITEMS, ...TICKER_ITEMS].map((item, i) => (
+            <span key={i}>
+              <span className="ticker-item">{item}</span>
+              <span className="ticker-sep">★</span>
+            </span>
+          ))}
+        </div>
+      </div>
+      */}
+
+      {/* SHOP */}
+      <section className="shop" id="shop">
+        <div className="shop-inner">
+          <div className="shop-heading">
+            <h2>T-Shirts</h2>
           </div>
+          <ProductGrid products={products} loading={loading} />
         </div>
-        <div className="hero-visual">
-          <img src="/chad-hero.jpg" alt="Chad's GPT collection" className="hero-img" />
-        </div>
-        <a className="hero-scroll" href="#trust" aria-label="Scroll down">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-            <path d="M12 5v14M5 12l7 7 7-7"/>
-          </svg>
-        </a>
       </section>
 
       {/* TRUST STRIP */}
@@ -101,32 +96,6 @@ export default function Home() {
             <strong>Ships in 5–7 days.</strong>
             <span>Faster than most AI roadmaps.</span>
           </div>
-        </div>
-      </section>
-
-      {/* RED TICKER */}
-      <div className="ticker-wrap" aria-hidden="true">
-        <div className="ticker-track">
-          {[...TICKER_ITEMS, ...TICKER_ITEMS].map((item, i) => (
-            <span key={i}>
-              <span className="ticker-item">{item}</span>
-              <span className="ticker-sep">★</span>
-            </span>
-          ))}
-        </div>
-      </div>
-
-      {/* SHOP */}
-      <section className="shop" id="shop">
-        <div className="shop-inner">
-          <div className="shop-heading">
-            <h2>The Collection</h2>
-            {!loading && products.length > 0 && (
-              <span className="shop-count">{products.length} Drops</span>
-            )}
-          </div>
-          <p className="section-sub">Six shirts. Infinite regrets. No refunds on irony.</p>
-          <ProductGrid products={products} loading={loading} />
         </div>
       </section>
 
