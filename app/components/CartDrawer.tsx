@@ -6,11 +6,13 @@ import { useCart } from '../CartContext';
 export default function CartDrawer() {
   const { items, removeItem, isOpen, setIsOpen, total } = useCart();
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
 
   if (!isOpen) return null;
 
   const handleCheckout = async () => {
     setLoading(true);
+    setError('');
     try {
       const res = await fetch('/api/checkout', {
         method: 'POST',
@@ -27,7 +29,7 @@ export default function CartDrawer() {
       if (error) throw new Error(error);
       window.location.href = url;
     } catch (err) {
-      alert('Checkout failed. Please try again.');
+      setError('Checkout failed. Please try again.');
       setLoading(false);
     }
   };
@@ -75,6 +77,7 @@ export default function CartDrawer() {
 
         {items.length > 0 && (
           <div className="cart-footer">
+            {error && <div className="cart-error">{error}</div>}
             <div className="cart-total">
               <span>Subtotal</span>
               <span>${(total / 100).toFixed(2)}</span>
@@ -84,7 +87,9 @@ export default function CartDrawer() {
               onClick={handleCheckout}
               disabled={loading}
             >
-              {loading ? 'Redirecting…' : 'Checkout'}
+              {loading ? (
+                <><span className="spinner" />Taking you to checkout…</>
+              ) : 'Checkout'}
             </button>
           </div>
         )}

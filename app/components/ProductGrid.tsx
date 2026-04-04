@@ -24,7 +24,17 @@ interface Props {
   loading: boolean;
 }
 
-function ProductCard({ product }: { product: PrintifyProduct }) {
+const BADGES = [
+  'AI Approved ✓',
+  'Chad Certified',
+  'GPT Tested',
+  'Human Verified',
+  'Ethically Vibed',
+  'No Guardrails',
+];
+
+function ProductCard({ product, index }: { product: PrintifyProduct; index: number }) {
+  const badge = BADGES[index % BADGES.length];
   const { addItem, setIsOpen } = useCart();
   const available = product.variants.filter(v => v.is_enabled && v.is_available);
   const [selectedVariantId, setSelectedVariantId] = useState(available[0]?.id ?? 0);
@@ -51,7 +61,8 @@ function ProductCard({ product }: { product: PrintifyProduct }) {
 
   return (
     <div className="product-card">
-      <div className="product-img-link">
+      <div className="product-img-wrap">
+        <span className="product-badge">{badge}</span>
         {image ? (
           <img src={image} alt={product.title} className="product-img" />
         ) : (
@@ -118,7 +129,7 @@ export default function ProductGrid({ products, loading }: Props) {
 
   return (
     <div className="product-grid">
-      {products.map(p => <ProductCard key={p.id} product={p} />)}
+      {products.map((p, i) => <ProductCard key={p.id} product={p} index={i} />)}
     </div>
   );
 }
