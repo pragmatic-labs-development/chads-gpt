@@ -6,6 +6,10 @@ export const metadata: Metadata = {
   title: "Chad's GPT — Funny AI T-Shirts",
   description:
     "Funny AI-themed t-shirts. Wear your opinions loudly. Ships in 5–7 business days. Faster than most AI roadmaps.",
+  icons: {
+    icon: '/favicon.svg',
+    shortcut: '/favicon.svg',
+  },
   openGraph: {
     title: "Chad's GPT — Funny AI T-Shirts",
     description: "Wear your AI opinions loudly. Funny shirts for people who've argued with a chatbot.",

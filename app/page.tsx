@@ -51,24 +51,34 @@ export default function Home() {
 
       {/* HERO */}
       <section className="hero">
-        <div className="hero-inner">
-          <div className="hero-tag">New Drop 🔥</div>
-          <h1>
-            Wear Your AI Opinions
-            <span className="hero-accent">Loudly.</span>
-          </h1>
-          <p className="subhead">
-            Funny shirts for people who&apos;ve argued with a chatbot and lost.<br />
-            Also for people who won. You know who you are.
-          </p>
-          <a className="cta-btn cta-large cta-btn-inverted" href="#shop">
-            Shop the Collection
-          </a>
+        <div className="hero-content">
+          <div className="hero-inner">
+            <div className="hero-tag">New Drop 🔥</div>
+            <h1>
+              Wear Your AI Opinions
+              <span className="hero-accent">Loudly.</span>
+            </h1>
+            <p className="subhead">
+              Funny shirts for people who&apos;ve argued with a chatbot and lost.
+              Also for people who won. You know who you are.
+            </p>
+            <a className="cta-btn cta-large cta-btn-inverted" href="#shop">
+              Shop the Collection
+            </a>
+          </div>
         </div>
+        <div className="hero-visual">
+          <img src="/chad-hero.jpg" alt="Chad's GPT collection" className="hero-img" />
+        </div>
+        <a className="hero-scroll" href="#trust" aria-label="Scroll down">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M12 5v14M5 12l7 7 7-7"/>
+          </svg>
+        </a>
       </section>
 
       {/* TRUST STRIP */}
-      <section className="trust-strip">
+      <section className="trust-strip" id="trust">
         <div className="trust-inner">
           <div className="trust-item">
             <svg className="trust-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
